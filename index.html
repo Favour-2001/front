@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Authentication Section -->
+  <div id="authContainer">
+    <!-- Login Form -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form id="authForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="toggleToRegister">Register here</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" style="display: none;">
+      <h2>Register</h2>
+      <form id="authForms">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="email">Email</label>
+        <input type="email" id="emailr" name="email" placeholder="Enter your email" required>
+        <label for="password">Password</label>
+        <input type="password" id="passwordr" name="password" placeholder="Enter your password" required>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="toggleToLogin">Login here</a></p>
+    </div>
+  </div>
+
+  <!-- Task Management Section -->
+  <div id="task-container" class="hidden">
+    <h1>TaskMaster</h1>
+    <button id="logout-btn">Logout</button>
+
+    <!-- Add Task Form -->
+    <form id="task-form">
+      <input type="text" id="title" placeholder="Task Title" required>
+      <textarea id="description" placeholder="Task Description"></textarea>
+      <input type="date" id="deadline" required>
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task Search Section -->
+    <div id="task-search" style="margin-top: 30px;">
+        <input type="text" id="search-bar" style="width: 90%;" placeholder="Search tasks..." />
+    </div>
+
+    <!-- Task Filtering Section -->
+    <div id="task-filters">
+        <label for="priority-filter">Filter by Priority:</label>
+        <select id="priority-filter">
+        <option value="all">All</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+        </select>
+        <br>
+        <label for="due-date-filter">Filter by Due Date:</label>
+        <select id="due-date-filter">
+        <option value="all">All</option>
+        <option value="past">Past Due</option>
+        <option value="today">Today</option>
+        <option value="future">Upcoming</option>
+        </select>
+    </div>
+
+    <!-- Task List -->
+    <div id="tasks" style="margin-top: 30px;"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
